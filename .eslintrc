@@ -1,0 +1,30 @@
+{
+  "extends": ["standard"],
+  "plugins": [],
+  "rules": {
+    "curly": [2, "multi-line"],
+    "import/first": 2,
+    "import/newline-after-import": 2,
+    "import/no-commonjs": 0,
+    "import/order": 2,
+    "import/prefer-default-export": 0,
+    "no-alert": 2,
+    "no-console": 2,
+    "no-debugger": 2,
+    "no-empty-function": 2,
+    "no-multi-spaces": 2,
+    "no-new": 0,
+    "no-var": 2,
+    "object-shorthand": 2,
+    "padded-blocks": [2, "never"],
+    "prefer-const": 2
+  },
+  "parser": "babel-eslint",
+  "globals": {
+    "Image": true,
+    "location": true,
+    "wx": true,
+    "WeixinJSBridge": true,
+    "chrome": true
+  }
+}
