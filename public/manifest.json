@@ -14,5 +14,12 @@
   "background": {
     "page": "background.html"
   },
+  "content_scripts": [
+    {
+      "matches": [],
+      "css": [],
+      "js": ["content.js"]
+    }
+  ],
   "permissions": ["tabs"]
 }
