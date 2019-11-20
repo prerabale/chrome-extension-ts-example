@@ -11,11 +11,15 @@
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
+    "eslint": "^6.6.0",
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-router": "^5.1.2",
+    "react-router-config": "^5.1.1",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "^1.0.0",
@@ -24,12 +28,28 @@
     "webpack-merge": "^4.2.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --open --config build/webpack.dev.conf.js",
+    "start": "webpack -w --config build/webpack.dev.conf.js",
     "build": "webpack --config build/webpack.prod.conf.js && npm run pack",
     "pack": "node build/pack"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{css,less}": [
+      "stylelint --fix",
+      "git add"
+    ],
+    "*.{json}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "browserslist": {
     "production": [
@@ -46,14 +66,19 @@
   "devDependencies": {
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.4",
+    "@types/react-router-config": "^5.0.1",
+    "@types/react-router-dom": "^5.1.2",
     "@types/vfile-message": "^2.0.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-standard": "^4.0.1",
     "fs-extra": "^8.1.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.4.3",
     "prettier": "^1.19.1",
     "stylelint": "^12.0.0",
     "stylelint-config-prettier": "^6.0.0",

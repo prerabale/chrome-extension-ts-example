@@ -1,18 +1,10 @@
-import React from "react";
+import React from 'react'
+import { MemoryRouter } from 'react-router-dom'
+import { renderRoutes } from 'react-router-config'
+import routes from './routes'
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>Hello React & Webpack!</h1>
-        <ul>
-          {["a", "b", "c"].map(name => (
-            <li>{`I'm ${name}!`}</li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
+const App = () => {
+  return <MemoryRouter>{renderRoutes(routes)}</MemoryRouter>
 }
 
 export default App

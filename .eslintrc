@@ -1,6 +1,11 @@
 {
-  "extends": ["standard", "plugin:prettier/recommended"],
-  "plugins": [],
+  "extends": [
+    "standard",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["react"],
   "rules": {
     "curly": [2, "multi-line"],
     "import/first": 2,
@@ -17,7 +22,8 @@
     "no-var": 2,
     "object-shorthand": 2,
     "padded-blocks": [2, "never"],
-    "prefer-const": 2
+    "prefer-const": 2,
+    "react/prop-types": [2]
   },
   "parser": "babel-eslint",
   "globals": {
